@@ -1,0 +1,15 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  servlet: #处理响应乱码设置
+    encoding:
+      enabled: true
+      charset: utf-8
+      force: true
+spring:
+  ai:
+    zhipuai:
+      api-key: 28e00a30bf9e4be6aea84ae5ad9d5777.q3ZKlsmq5NNVoqTZ
+      chat:
+        options:
+          model: glm-4.5 #指定模型名称
