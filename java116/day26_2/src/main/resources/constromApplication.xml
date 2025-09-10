@@ -1,0 +1,16 @@
+<!-- 根标签 -->
+<beans>
+    <!--     配置ProductMapper类对象 -->
+    <bean id="productMapper" class="com.wn.mapper.BookMapper">
+        <!--         给类中属性输入值 -->
+        <property name="pid" value="111111"/>
+        <property name="pname" value="aaaaa"/>
+    </bean>
+    <!--     创建ProductService类对象 -->
+    <bean id="productService" class="com.wn.service.impl.ProductService">
+        <!--         注入属性值 -->
+        <property name="productMapper" ref="productMapper"/>
+    </bean>
+
+    <!--    扫描spring注解-->
+</beans>

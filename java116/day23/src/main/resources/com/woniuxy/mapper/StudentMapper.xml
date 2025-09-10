@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.mapper.StudentMapper">
+    <!--  由课程表获得学生信息，一步到位法   -->
+    <!--    <select id="selectByCid" resultMap="courseMapper">-->
+    <!--        select *-->
+    <!--        from course c,-->
+    <!--             score s,-->
+    <!--             student t-->
+    <!--        where c.cid = s.cid-->
+    <!--          and s.sid = t.sid-->
+    <!--          and c.cid = #{cid}-->
+    <!--    </select>-->
+    <!--    <resultMap id="courseMapper" type="Course">-->
+    <!--        <id column="cid" property="cid"/>-->
+    <!--        <result column="cname" property="cname"/>-->
+    <!--        <collection property="students" ofType="Student">-->
+    <!--            <id column="sid" property="sid"/>-->
+    <!--            <result column="sname" property="sname"/>-->
+    <!--        </collection>-->
+    <!--    </resultMap>-->
+    <!--   由课程表获得学生信息，分步法       -->
+
+    <select id="selectBysid" resultMap="studentMapper">
+        select *
+        from student
+        where sid = #{sid}
+    </select>
+    <resultMap id="studentMapper" type="Student">
+        <id column="sid" property="sid"/>
+        <result column="sname" property="sname"/>
+        <collection property="courses" ofType="Course" select="selectCourseBysid" column="sid"/>
+    </resultMap>
+    <select id="selectCourseBysid" resultType="Course">
+        select *
+        from course c,
+             score sc
+        where c.cid = sc.cid
+          and sid = #{sid}
+    </select>
+
+</mapper>

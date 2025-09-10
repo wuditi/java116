@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.wn"></context:component-scan>
+    <!--无参构造-->
+    <!--    <bean id="user" class="com.wn.entity.UseName"></bean>-->
+    <!--    <bean id="user2" class="com.wn.entity.UseName">-->
+    <!--        <constructor-arg name="id" value="001"></constructor-arg>-->
+    <!--        <constructor-arg name="name" value="ls"></constructor-arg>-->
+    <!--        <constructor-arg name="age" value="11"></constructor-arg>-->
+    <!--        <constructor-arg name="gender" value="男"></constructor-arg>-->
+
+    <!--    </bean>-->
+    <!--    <bean id="beanUser" class="com.wn.factory.BeanUserFactory" name="factory,UF" factory-method="beanUser"></bean>-->
+
+    <!--    <bean id="BeanUserFactory" class="com.wn.factory.BeanUserFactory"></bean>-->
+    <!--    <bean id="userBean" factory-bean="BeanUserFactory" factory-method="useBean"></bean>-->
+
+
+    <!--    <bean id="dog" class="com.wn.entity.Dog">-->
+    <!--        <property name="name" value="aa"></property>-->
+    <!--        <property name="age" value="11"></property>-->
+    <!--    </bean>-->
+
+
+    <!--    <bean id="user" class="com.wn.entity.UseName">-->
+
+    <!--        <property name="age" value="11"></property>-->
+    <!--        <property name="name" value="ls"></property>-->
+    <!--        <property name="gender" value="man"></property>-->
+    <!--        <property name="id" value="11"></property>-->
+
+    <!--        &lt;!&ndash;日期类型&ndash;&gt;-->
+    <!--        <property name="birthday" value="2025/02/22 12:22:22"></property>-->
+    <!--        &lt;!&ndash;对象类型&ndash;&gt;-->
+    <!--        <property name="dog" ref="dog"></property>-->
+    <!--        &lt;!&ndash;数组类型&ndash;&gt;-->
+    <!--        <property name="NUM">-->
+    <!--            <array>-->
+    <!--                <value>1</value>-->
+    <!--                <value>2</value>-->
+    <!--                <value>3</value>-->
+    <!--            </array>-->
+    <!--        </property>-->
+    <!--        &lt;!&ndash;集合类型&ndash;&gt;-->
+    <!--        <property name="dogs">-->
+    <!--            <list>-->
+    <!--                <bean class="com.wn.entity.Dog">-->
+    <!--                    <property name="name" value="cc"></property>-->
+    <!--                    <property name="age" value="33"></property>-->
+    <!--                </bean>-->
+
+    <!--                <bean class="com.wn.entity.Dog">-->
+    <!--                    <property name="name" value="bb"></property>-->
+    <!--                    <property name="age" value="22"></property>-->
+    <!--                </bean>-->
+
+    <!--            </list>-->
+    <!--        </property>-->
+
+
+    <!--    </bean>-->
+
+    <!--    <bean id="userCreateMapper" class="com.wn.entity.UseName"></bean>-->
+
+
+    <!--    <bean id="dog" class="com.wn.entity.Dog">-->
+    <!--        <property name="name" value="汪汪"></property>-->
+    <!--        <property name="age" value="2"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="userAddMapper" class="com.wn.entity.UseName">-->
+    <!--        <property name="age" value="11"></property>-->
+    <!--        <property name="name" value="aa"></property>-->
+    <!--        <property name="gender" value="man"></property>-->
+    <!--        <property name="id" value="001"></property>-->
+    <!--        <property name="dog" ref="dog"></property>-->
+    <!--        <property name="dogs">-->
+    <!--            <list>-->
+    <!--                <bean class="com.wn.entity.Dog">-->
+    <!--                    <property name="name" value="CC"></property>-->
+    <!--                    <property name="age" value="11"></property>-->
+    <!--                </bean>-->
+    <!--                <bean class="com.wn.entity.Dog">-->
+    <!--                    <property name="name" value="汪汪"></property>-->
+    <!--                    <property name="age" value="2"></property>-->
+    <!--                </bean>-->
+    <!--            </list>-->
+    <!--        </property>-->
+    <!--        <property name="birthday" value="2025/02/22 12:22:22"></property>-->
+    <!--        <property name="NUM">-->
+    <!--            <array>-->
+    <!--                <value>1</value>-->
+    <!--                <value>2</value>-->
+    <!--                <value>3</value>-->
+    <!--                <value>4</value>-->
+    <!--            </array>-->
+    <!--        </property>-->
+    <!--        <property name="aaa">-->
+    <!--            <map>-->
+    <!--                <entry key="1" value="11"></entry>-->
+    <!--                <entry key="2" value="12"></entry>-->
+    <!--                <entry key="3" value="13"></entry>-->
+    <!--            </map>-->
+    <!--        </property>-->
+    <!--    </bean>-->
+
+    <!--    <bean id="addImforation" class="com.wn.mapper.UserMapper">-->
+
+    <!--    </bean>-->
+    <!--    <bean id="userMapper" class="com.wn.mapper.UserMapper"></bean>-->
+
+
+    <!--    <bean id="userService" class="com.wn.service.impl.UserServiceImpl">-->
+    <!--        <property name="userMapper" ref="userMapper"></property>-->
+    <!--    </bean>-->
+    <!--    <bean id="userController" class="com.wn.controller.UserController">-->
+    <!--        <property name="userService" ref="userService"></property>-->
+    <!--    </bean>-->
+
+</beans>

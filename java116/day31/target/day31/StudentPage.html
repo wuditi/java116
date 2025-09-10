@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>显示学生数据</title>
+    <!--  引入jquery 库 -->
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <style>
+        #stuTable {
+            margin: auto; /*居中显示*/
+            width: 800px;
+            border-collapse: collapse;
+        }
+
+        #stuTable td, #stuTable th {
+            border: 1px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<script>
+    <!--            当前页面加载结束，发送一个异步请求 查询所有学生信息-->
+    //function(a,b){函数体}
+    $(function () {
+        //发送异步请求
+        // $.get(请求资源url,请求提交参数,回调函数,数据格式)
+        // $.get("/day31/ServletF?uname=root&pwd=123",result => {
+        //     console.log(result)
+        // })
+        $.get("/day31/ServletE", function (result) {
+            //遍历集合
+            for (let i = 0; i < result.length; i++) {
+                //获取当前对象
+                let stu = result[i];
+                //用jquery操作dom节点
+                $("<tr/>")//相当<tr></tr>
+                    .append("<td>" + stu.id + "</td>")  //<td>1002</td>
+                    .append("<td>" + stu.name + "</td>")  //<td>1002</td>
+                    .append("<td>" + stu.age + "</td>")  //<td>1002</td>
+                    .append("<td>" + stu.gender + "</td>")  //<td>1002</td>
+                    .append("<td><a href='#'>修  改</a>&emsp;&emsp;<a href='#'>删  除</a></td>")  //<td>1002</td>
+                    .appendTo($("#stuTable tbody"))
+            }
+        }, 'json');
+    })
+</script>
+<!--用表格显示数据-->
+<table id="stuTable">
+    <thead>
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+</table>
+</body>
+</html>

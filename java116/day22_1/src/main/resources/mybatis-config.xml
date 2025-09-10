@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- XML声明，必须在xml第一行 -->
+<!--  添加了约束文档 dtd也是一个xml文件，有自己的严格语法，规定xml文档必须满足什么要求(包含哪些标签，出现的次数，标签中有哪些属性) -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--  configuration是主配置文件的根节点 -->
+<!--  Java中有一套专门读取XML配置文件的工具包dom4j -->
+<configuration>
+
+    <!--配置sql日志，在执行时显示sql语句 -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--  别名设置：使用类名代替全限定名,必须在settings后面，顺序全部都有规定   -->
+    <typeAliases>
+        <!--        <typeAlias alias="Stu" type="com.woniuxy.entity.Stu"/>-->
+        <!--如果有多张表，则需要多个类，名字过多不方便，直接命名为包名，会自动检索包下的类名，自动设置别名-->
+        <package name="com.woniuxy.entity"/>
+    </typeAliases>
+
+    <!--   基本环境,支持多组行家，和一种具体environment标签的id搭配 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理，使用JDBC内置的默认事务管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 连接池，我们使用内置默认的，以后可以使用第三方的连接池 -->
+            <dataSource type="POOLED">
+                <!-- JDBC四大参数 -->
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/db2?serverTimezone=UTC"/>
+                <property name="username" value="root"/>
+                <property name="password" value="301268"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <!--  映射文件  -->
+    <mappers>
+        <!--  配置映射文件的路径，相对类路径      -->
+        <package name="com.woniuxy.mapper.impl"/>
+
+    </mappers>
+</configuration>

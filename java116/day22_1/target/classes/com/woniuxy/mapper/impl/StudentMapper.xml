@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniuxy.dao.Mapper.StudentMapper">
+
+    <select id="selectBySid" resultMap="studentMapper">
+        SELECT * FROM student s ,course c ,score sc
+        WHERE s.`sid`=sc.`sid` AND c.`cid`=sc.`cid` AND s.sid=#{sid}
+    </select>
+
+    <resultMap id="studentMapper" type="Student">
+        <id column="sid" property="sid"/>
+        <result column="sname" property="sname"/>
+        <result column="age" property="age"/>
+        <!--  一个学生多门课，对多      -->
+        <collection property="course" ofType="Course">
+            <id column="cid" property="cid"/>
+            <result column="cname" property="cname"/>
+        </collection>
+    </resultMap>
+</mapper>

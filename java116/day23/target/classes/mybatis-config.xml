@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- XML声明，必须在xml第一行 -->
+<!--  添加了约束文档 dtd也是一个xml文件，有自己的严格语法，规定xml文档必须满足什么要求(包含哪些标签，出现的次数，标签中有哪些属性) -->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--  configuration是主配置文件的根节点 -->
+<!--  Java中有一套专门读取XML配置文件的工具包dom4j -->
+<configuration>
+
+    <!--    配置读取的porperties文件路，相对路径：类路径-->
+    <properties resource="jdbc.properties"/>
+    <!--  常用设置  -->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+
+    <!--  别名设置：使用类名代替全限定名   -->
+    <typeAliases>
+        <!--        <typeAlias alias="Stu" type="com.woniuxy.entity.Stu"/>-->
+        <package name="com.woniuxy.entity"/>
+    </typeAliases>
+
+    <plugins>
+        <!--配置分页插件-->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor"></plugin>
+    </plugins>
+
+    <!--   基本环境,支持多组行家，和一种具体environment标签的id搭配 -->
+    <environments default="development">
+        <environment id="development">
+            <!-- 事务管理，使用JDBC内置的默认事务管理 -->
+            <transactionManager type="JDBC"/>
+            <!-- 连接池，我们使用内置默认的，以后可以使用第三方的连接池 -->
+            <dataSource type="POOLED">
+                <!-- JDBC四大参数 -->
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!--  映射文件  -->
+    <mappers>
+        <!--  配置映射文件的路径，相对类路径      -->
+        <!--        <mapper resource="com/woniuxy/mapper/StuMapper.xml"/>-->
+        <package name="com.woniuxy.mapper"/>
+    </mappers>
+</configuration>

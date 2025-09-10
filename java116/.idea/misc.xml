@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/day09/pom.xml" />
+        <option value="$PROJECT_DIR$/day10/pom.xml" />
+        <option value="$PROJECT_DIR$/day11/pom.xml" />
+        <option value="$PROJECT_DIR$/day12/pom.xml" />
+        <option value="$PROJECT_DIR$/day13/pom.xml" />
+        <option value="$PROJECT_DIR$/day14/pom.xml" />
+        <option value="$PROJECT_DIR$/../java/pom.xml" />
+        <option value="$PROJECT_DIR$/../day15/pom.xml" />
+        <option value="$PROJECT_DIR$/pricate/pom.xml" />
+        <option value="$PROJECT_DIR$/day16/pom.xml" />
+        <option value="$PROJECT_DIR$/dayhomework01/pom.xml" />
+        <option value="$PROJECT_DIR$/day17/pom.xml" />
+        <option value="$PROJECT_DIR$/day20/pom.xml" />
+        <option value="$PROJECT_DIR$/tcent/pom.xml" />
+        <option value="$PROJECT_DIR$/day21/pom.xml" />
+        <option value="$PROJECT_DIR$/../dateUse/pom.xml" />
+        <option value="$PROJECT_DIR$/../day22/pom.xml" />
+        <option value="$PROJECT_DIR$/day22_1/pom.xml" />
+        <option value="$PROJECT_DIR$/day23/pom.xml" />
+        <option value="$PROJECT_DIR$/day26/pom.xml" />
+        <option value="$PROJECT_DIR$/day25/pom.xml" />
+        <option value="$PROJECT_DIR$/../day/pom.xml" />
+        <option value="$PROJECT_DIR$/day26_2/pom.xml" />
+        <option value="$PROJECT_DIR$/day27/pom.xml" />
+        <option value="$PROJECT_DIR$/day28/pom.xml" />
+        <option value="$PROJECT_DIR$/springBootDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/28_springBoot/pom.xml" />
+        <option value="$PROJECT_DIR$/day29/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+        <option value="$PROJECT_DIR$/day30/pom.xml" />
+        <option value="$PROJECT_DIR$/day30_2/pom.xml" />
+        <option value="$PROJECT_DIR$/day31/pom.xml" />
+        <option value="$PROJECT_DIR$/day32/pom.xml" />
+        <option value="$PROJECT_DIR$/day33/pom.xml" />
+        <option value="$PROJECT_DIR$/day33_2/pom.xml" />
+        <option value="$PROJECT_DIR$/day34/pom.xml" />
+        <option value="$PROJECT_DIR$/day35/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/../day22/pom.xml" />
+        <option value="$PROJECT_DIR$/../java/pom.xml" />
+        <option value="$PROJECT_DIR$/untitled/pom.xml" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

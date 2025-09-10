@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--映射文件的根节点
+namespace名称空间（命名空间）：目前可以任意，建议和接口的实现类名相同
+-->
+<mapper namespace="com.woniuxy.dao.Mapper.StuMapper">
+    <!-- 映射文件的内容，就是Mapper方法中的sql语句,
+        id就是一个标签的唯一的名字，目前可以任意，建议和方法名相同
+       -->
+    <insert id="insert">
+        insert into student2 values(#{sid},#{sname},#{gender},#{age},#{email})
+    </insert>
+    <update id="update">
+        update student2 set snane=#{sname},gender=#{gender},age=#{age},email=#{email} where sid=#{sid}
+    </update>
+    <select id="selectBysid" resultType="Stu">
+        select * from student2 where sid=#{sid}
+    </select>
+
+    <select id="selectByCondition01" resultType="Stu">
+        select * from student2 where 1=1
+        <if test="snane!=null and snane!=''">
+            and snane like '%'#{snane}'%'
+        </if>
+        <if test="gender!=null and gender!=''">
+            and gender like #{gender}
+        </if>
+        <if test="age!=null ">
+            and age=#{age}
+        </if>
+    </select>
+    <insert id="insertBatch">
+
+        <if test="list!=null and list.size>0">
+            insert into student2 values
+            <!--    for( 数据类型  迭代变量 : 数组或者集合)       -->
+            <foreach collection="list" item="stu" separator=",">
+                (#{stu.sid},#{stu.snane},#{stu.gender},#{stu.age},#{stu.email})
+            </foreach>
+        </if>
+    </insert>
+
+
+    <sql id="pageConditionSql">
+        <where>
+            <if test="stus.gender!=null and stus.gender!=''">
+                and gender like #{stus.gender}
+            </if>
+            <if test="stus.age!=null ">
+                and age=#{stus.age}
+            </if>
+        </where>
+    </sql>
+
+    <select id="selectConditionPageCount" resultType="int">
+        select count(*) from student2
+        <bind name="pageNum" value="(pageIndex-1)*pageSize"/>
+    </select>
+    <select id="selectConditionPage" resultType="Stu">
+        <bind name="pageNum" value="(pageIndex-1)*pageSize"/>
+        select * from student2
+        <include refid="pageConditionSql"/>
+        limit #{pageNum},#{pageSize}
+    </select>
+
+    <!--   对一查询，一步到位 -->
+    <!--            <select id="selectBydid" resultMap="empMapper">-->
+    <!--                select * from dep d,emp e where d.did=e.did and eid=#{eid}-->
+    <!--            </select>-->
+    <!--            &lt;!&ndash;  域 ，resultMap&ndash;&gt;-->
+    <!--            <resultMap id="empMapper" type="Emp">-->
+    <!--                <id column="eid" property="eid"/>-->
+    <!--                <result column="empname" property="empname"/>-->
+    <!--                &lt;!&ndash;  对一用assocation和javaType    &ndash;&gt;-->
+    <!--                <association property="dep" javaType="Dep">-->
+    <!--                    <id column="did" property="did"/>-->
+    <!--                    <result column="depname" property="depname"/>-->
+    <!--                </association>-->
+    <!--            </resultMap>-->
+    <!--       对一查询，分布查询 -->
+    <select id="selectByEid" resultMap="empMapper">
+        select * from emp where eid=#{eid}
+    </select>
+    <!--  域 ，resultMap-->
+    <resultMap id="empMapper" type="Emp">
+        <id column="eid" property="eid"/>
+        <result column="empname" property="empname"/>
+        <!--  对一用assocation和javaType    -->
+        <association property="dep" javaType="Dep" select="selectDepBydid" column="did"/>
+    </resultMap>
+    <select id="selectDepBydid" resultType="Dep">
+        select* from dep where did=#{did}
+    </select>
+
+
+    <!-- 对多，一步查询   -->
+    <select id="selectByDid" resultMap="depMapper">
+        select * from dep d,emp e where d.did=e.did and d.did=#{did}
+    </select>
+    <!--  域 ，resultMap-->
+    <resultMap id="depMapper" type="Dep">
+        <id column="did" property="did"/>
+        <result column="depname" property="depname"/>
+        <!--  对多用collection和Type    -->
+        <collection property="emps" ofType="Emp">
+            <id column="eid" property="eid"/>
+            <result column="empname" property="empname"/>
+        </collection>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,22 @@
+package com.wn.day35;
+
+import com.wn.day35.entity.User;
+import com.wn.day35.mapper.UserMapper;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.List;
+
+@SpringBootTest
+public class UserMapperTest {
+    @Autowired
+    private UserMapper userMapper;
+
+    @Test
+    public void selectAll() {
+        List<User> userList = userMapper.selectList(null);
+        userList.forEach(System.out::println);
+    }
+
+}

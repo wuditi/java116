@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="day09" />
+        <module name="day29" />
+        <module name="tcent" />
+        <module name="day28" />
+        <module name="pricate" />
+        <module name="day27" />
+        <module name="day26" />
+        <module name="day14" />
+        <module name="day13" />
+        <module name="day35" />
+        <module name="day12" />
+        <module name="day34" />
+        <module name="day11" />
+        <module name="day33" />
+        <module name="day10" />
+        <module name="day32" />
+        <module name="day31" />
+        <module name="day30" />
+        <module name="day30_2" />
+        <module name="day" />
+        <module name="day26_2" />
+        <module name="day17" />
+        <module name="day16" />
+        <module name="day15" />
+        <module name="day25" />
+        <module name="day23" />
+        <module name="day21" />
+        <module name="day20" />
+        <module name="day22_1" />
+        <module name="dayhomework01" />
+        <module name="dateUse" />
+      </profile>
+      <profile name="Annotation profile for day33_2" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="day33_2" />
+        <module name="springBoot" />
+      </profile>
+      <profile name="Annotation profile for springBootDemo" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
+        </processorPath>
+        <module name="springBootDemo" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="day22" target="17" />
+      <module name="java" target="17" />
+      <module name="untitled" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="day29" options="-parameters" />
+      <module name="day32" options="-parameters" />
+      <module name="day33" options="-parameters" />
+      <module name="day33_2" options="-parameters" />
+      <module name="day34" options="-parameters" />
+      <module name="day35" options="-parameters" />
+      <module name="springBoot" options="-parameters" />
+      <module name="springBootDemo" options="-parameters" />
+    </option>
+  </component>
+</project>
