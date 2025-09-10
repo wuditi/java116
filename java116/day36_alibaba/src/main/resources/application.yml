@@ -1,0 +1,12 @@
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  servlet: #处理响应乱码设置
+    encoding:
+      enabled: true
+      charset: utf-8
+      force: true
+spring:
+  ai:
+    dash scope:
+      api-key: sk-65ccd2c44f784d29b1519d5f69082088

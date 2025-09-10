@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>AI 问答 Demo</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="/js/jquery-3.6.4.min.js"></script>
+    <script src="/js/app.js" defer></script>
+</head>
+<body>
+
+<!-- 背景层 -->
+<div class="background"></div>
+
+<!--&lt;!&ndash; 顶部轮播图 &ndash;&gt;-->
+<!--<div class="top-carousel">-->
+<!--    <img src="/images/Art_of_Yoneyama_Mai_3.webp" class="active" alt="">-->
+<!--    <img src="/images/Art_of_Yoneyama_Mai_47.webp" alt="">-->
+<!--    <img src="/images/Art_of_Yoneyama_Mai_77.webp" alt="">-->
+<!--</div>-->
+
+<!-- 主体容器 -->
+<main class="container">
+    <h1>AI 问答</h1>
+
+    <textarea id="prompt" placeholder="输入你的问题..."></textarea>
+
+    <div class="buttons">
+        <button id="askSync" class="btn btn-primary">同步问答</button>
+        <button id="askStream" class="btn btn-primary">流式问答</button>
+        <button id="stopStream" class="btn btn-secondary" disabled>停止流式</button>
+        <button id="clear" class="btn btn-secondary">清空</button>
+    </div>
+
+    <h2>回答</h2>
+    <pre id="output" class="output"></pre>
+    <div id="status" class="status"></div>
+</main>
+</body>
+</html>

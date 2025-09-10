@@ -1,0 +1,143 @@
+/* 页面整体风格 */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* 背景虚化 */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/images/Art_of_Yoneyama_Mai_37.webp"); /* static 下的背景图片 */
+    background-size: cover;
+    background-position: center;
+    filter: blur(8px) brightness(0.7);
+    z-index: -1;
+}
+
+/* 顶部轮播图 */
+.top-carousel {
+    position: fixed;
+    top: 10px; /* ✅ 调整位置，避免紧贴顶部 */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 3; /* ✅ 提高层级，确保不被遮挡 */
+    padding: 10px;
+}
+
+.top-carousel img {
+    width: 180px; /* ✅ 调整大小，和问答框更协调 */
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; /* ✅ 更柔和的切换 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* ✅ 让图片更突出 */
+}
+
+/* 当前显示图片 */
+.top-carousel img.active {
+    opacity: 1;
+}
+
+/* 主容器 */
+.container {
+    width: 650px;
+    max-width: 95%;
+    background: rgba(255, 255, 255, 0.88); /* ✅ 改成半透明 */
+    padding: 30px;
+    border-radius: 10px; /* ✅ 更柔和的圆角 */
+    z-index: 2;
+    margin-top: 140px; /* ✅ 往下移动，避免和顶部轮播重叠 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* ✅ 添加阴影，突出卡片 */
+    backdrop-filter: blur(4px); /* ✅ 玻璃磨砂效果 */
+}
+
+/* 标题 */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #222;
+}
+
+/* 输入框 */
+textarea {
+    width: 100%;
+    height: 120px; /* ✅ 稍微加大 */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    resize: none;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.9); /* ✅ 半透明输入框 */
+}
+
+/* 按钮组 */
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    flex: 1;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #4a90e2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #357ab8;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #d5d5d5;
+}
+
+/* 输出区域 */
+.output {
+    background: rgba(250, 250, 250, 0.9); /* ✅ 半透明 */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 14px;
+    min-height: 120px;
+    white-space: pre-wrap;
+    font-size: 15px;
+}
+
+/* 状态栏 */
+.status {
+    font-size: 13px;
+    color: #555;
+    margin-top: 8px;
+    text-align: right;
+}
