@@ -15,6 +15,7 @@
         <module name="day27" />
         <module name="day26" />
         <module name="day14" />
+        <module name="day36" />
         <module name="day13" />
         <module name="day35" />
         <module name="day12" />
@@ -31,12 +32,15 @@
         <module name="day17" />
         <module name="day16" />
         <module name="day15" />
+        <module name="day37" />
         <module name="day25" />
         <module name="day23" />
         <module name="day21" />
         <module name="day20" />
+        <module name="day41" />
         <module name="day22_1" />
         <module name="dayhomework01" />
+        <module name="day37-community" />
         <module name="dateUse" />
       </profile>
       <profile name="Annotation profile for day33_2" enabled="true">
@@ -45,15 +49,26 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
           <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+          <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="day33_2" />
         <module name="springBoot" />
+      </profile>
+      <profile name="Annotation profile for day36_alibaba" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="day36_alibaba" />
       </profile>
       <profile name="Annotation profile for springBootDemo" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="false">
+          <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
           <entry name="$PROJECT_DIR$/../../../javatool/local/org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar" />
         </processorPath>
         <module name="springBootDemo" />
@@ -73,6 +88,11 @@
       <module name="day33_2" options="-parameters" />
       <module name="day34" options="-parameters" />
       <module name="day35" options="-parameters" />
+      <module name="day36" options="-parameters" />
+      <module name="day36_alibaba" options="-parameters" />
+      <module name="day37" options="-parameters" />
+      <module name="day37-community" options="-parameters" />
+      <module name="day41" options="-parameters" />
       <module name="springBoot" options="-parameters" />
       <module name="springBootDemo" options="-parameters" />
     </option>
